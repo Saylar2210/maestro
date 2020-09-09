@@ -8,7 +8,7 @@ let gulp = require('gulp'),
     cssmin = require('gulp-cssmin')
 
 gulp.task('sass', function() {
-  return gulp.src('app/scss/style.scss')
+  return gulp.src('app/**/*.scss')
           .pipe(sass({outputStyle: 'compressed'}))
           .pipe(rename({suffix: '.min'}))
           .pipe(autoprefixer({

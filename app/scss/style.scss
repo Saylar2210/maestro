@@ -1,14 +1,11 @@
-html {
-    box-sizing: border-box;
-  }
-  
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
+@import 'vars';
+@import 'global';
 
-body{
-  background-color:green;
-
+.header__top-inner{
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+    align-items: center;
 }
+
+
