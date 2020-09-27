@@ -8,6 +8,7 @@
     justify-content: space-between;
     height: 90px;
     align-items: center;
+   
 }
 .header__text{
   margin: 0 auto;
@@ -28,7 +29,9 @@ font-size: 12px;
   background-color: $green;
 
 }
-.header__register{
+.header__register,
+.header__btn-logout
+{
   background-color: $red;
   margin-left: 7px;
   
@@ -54,6 +57,115 @@ font-size: 12px;
     font-size: 14px;
   }
 }
+.header__circle{
+  &.active{
+    display: block;
+  }
+  display: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  position: relative;
+  &::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+  & + .header__circle{
+    margin-left: 15px;
+  }
+  span{
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    right: -9px;
+    top: -9px;
+    font-size: 11px;
+    color: #fff;
+  }
+}
+.header__box{
+  display: flex;
+  align-items: center;
+}
+.notification{
+  span{
+background-color: $yellow;
+  }
+}
+  .messege{
+    span{
+      background-color: $tomate;
+    }
+
+  }
+  .basket{
+    span{
+background-color: $green;
+    }
+  }
+.header__btn-login--off{
+  display: none;
+}
+.header__btn-logout{
+  display: block;
+  &.header__btn-login--on{
+    display: block;
+  }
+}
+  .user{
+    margin-left: 20px;
+    margin-right: 25px;
+    padding-right: 20px;
+    position: relative;
+    &::before{
+      content: "\f107";
+      position: absolute;
+      font-family: 'icomoon';
+      font-size: 16px;
+      color: #707070;
+      top: 0;
+      right: 0;
+    }
+    .user__inner{
+   display: flex;
+   align-items: center;
+    }
+    .user__images{
+     
+      margin-right: 15px;
+      width: 32px;
+      height: 34px;
+      overflow: hidden;
+      border-radius: 50%;
+      
+    }
+  &__info{
+    font-size: 14px;
+    line-height: 24px;
+  }
+    &__name{
+     
+      @include f500;
+      color: #222;
+     
+    }
+    &__money{
+      color: $green;
+     @include f700;
+    }
+  }
+.user__box{
+  position: relative;
+}
+
 // end header
 // start searth
 .search{
@@ -120,6 +232,42 @@ font-size: 12px;
     }
   }
 }
+.user__menu{
+  top: 69px;
+  left: 20px;
+  border: 1px solid rgb(204, 204, 204);
+  position: absolute;
+  background-color: rgb(255, 255, 255);
+  padding: 0 20px;
+  width: 158px;
+  transition: all .3s;
+  height: 0;
+  overflow: hidden;
+ 
+  
+  a{
+    font-size: 12px;
+    color: #546e7a;
+    line-height: 36px;
+    margin-bottom: 15px;
+  }
+}
+.user__box{
+  position: relative;
+  height: 90px;
+  margin-top: 40px;
+  &:hover{
+    .user__menu{
+      height: auto;
+      border-width:1px;
+      padding: 20px;
+      overflow: auto;
+    }
+  }
+}
+
+
+
 // end searth
 
 
@@ -148,6 +296,9 @@ background-color: $grey;
 
     }
   }
+  .slick-slide {
+    margin-left: 20px;
+  }
 
 }
 .products__inner-box{
@@ -161,6 +312,7 @@ background-color: $grey;
     width: 100%;
     box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
     margin-bottom: 30px;
+    margin-left: 20px;
   &-img{
     
     min-height: 250px;
@@ -598,6 +750,7 @@ background-color: $green;
 // product page start
 .product-page__inner{
   display: flex;
+  padding-bottom: 110px;
 }
 .product-page__aside{
   margin-right: 30px;
@@ -748,6 +901,7 @@ display: none;
 .product__item{
   padding-bottom: 30px;
   margin-bottom: 30px;
+  
   border-bottom: 1px solid #dde3e8;
 }
 }
@@ -779,11 +933,13 @@ display: none;
   justify-content: space-between;
   align-items: center;
   button{
+    margin-right: 10px;
     cursor: pointer;
     background-color: transparent;
     border: none;
     font-size: 16px;
     color: #90a4ae;
+    outline: none;
     &.active{
       color:$green;
     }
@@ -791,14 +947,17 @@ display: none;
 }
   .product-page__filter-sort{
 font-size: 14px;
+display: flex;
+align-items: center;
+
 color: #707070;
 
   }
-  .icon-sort-amount-desc{
+  button.icon-sort-amount-desc{
     font-size: 18px;
     color: #455a64;
   }
-  .icon-unsorted{
+  button.icon-unsorted{
 font-size: 14px;
 color: #707070;
 padding-left: 10px;
@@ -808,5 +967,149 @@ padding-left: 10px;
 .product-page__content{
   width: 100%;
 }
+.product-page__content{
+  .product__item{
+    max-width: 270px;
+    background-color: #fff;
+    transition: all .5s;
+  }
+  .product__item-img {
+    min-height: 180px;
+  }
+  .product__item-content{
+    padding: 10px 20px;
+  }
+  .product__item-title{
+    font-size: 16px;
+  }
+  .product__item-info{
+    min-height: 65px;
+    padding: 10px 20px;
 
+  }
+  .rate-star{
+    margin-right: 5px;
+  }
+  .jq-ry-container{
+    padding: 0;
+
+  }
+}
+.product-page__items{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+.pagination__list{
+  li{
+    display: inline-block;
+    & + li{
+      margin-left: 6px;
+    }
+  }
+  a{
+    box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+    width: 43px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: $bg;
+  @include f500;
+  &.active{
+    background-color: $red;
+    color: #fff;
+  }
+  }
+}
+.product__item-text{
+  display: none;
+}
+.product__item-price{
+  span{
+    display: none;
+  }
+}
+.product__item-list{
+  display: none;
+  .icon-comment-o{
+    font-size: 12px;
+    color: #70838d;
+   
+    span{
+      @include f500;
+      color:$bg;
+    }
+  }
+  .icon-heart-o{
+display: inline-block;
+font-size: 12px;
+color: #70838d;
+padding-left: 50px;
+border-left: 1px solid #aeb4bb;
+position: relative;
+span{
+  @include f500;
+      color:$bg;
+}
+&::before{
+  font-size: 16px;
+  color: $green;
+  position: absolute;
+  left: 20px;
+  top: 0;
+}
+  }
+  .icon-comment-o{
+    padding-right: 30px;
+    &::before{
+      top: -2px;
+    }
+    
+  }
+
+}
+.product__item{
+  &.list{
+    max-width: 100%;
+    .product__item-img{
+      width: 240px;
+      float: left;
+      min-height: 100%;
+    }
+    .product__item-text{
+      display: block;
+      font-size: 14px;
+      color: #70838d;
+      margin-top: 15px;
+      margin-bottom: 5px;
+    }
+    .product__item-price{
+     font-size: 30px;
+      span{
+        display: block;
+        font-size: 13px;
+        color: #aeb4bb;
+        margin-top: 30px;
+      }
+    }
+    .product__item-name{
+      max-width: 480px;
+    }
+    .product__item-content{
+      padding-top: 23px;
+    }
+    .product__item-list{
+      display: block;
+    }
+    .product__item-star{
+      margin-left: auto;
+      margin-right: 30px;
+
+    }
+  }
+}
 // product page end
+
