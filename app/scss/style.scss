@@ -75,9 +75,7 @@ font-size: 12px;
     color: #a0a0a0;
     font-size: 14px;
   }
-  & + .header__circle{
-    margin-left: 15px;
-  }
+
   span{
     position: absolute;
     width: 18px;
@@ -85,8 +83,8 @@ font-size: 12px;
     border-radius: 50%;
     text-align: center;
     line-height: 18px;
-    right: -9px;
-    top: -9px;
+    right: -7px;
+    top: -7px;
     font-size: 11px;
     color: #fff;
   }
@@ -102,7 +100,7 @@ background-color: $yellow;
 }
   .messege{
     span{
-      background-color: $tomate;
+      background-color: $tomato;
     }
 
   }
@@ -165,6 +163,23 @@ background-color: $green;
 .user__box{
   position: relative;
 }
+.notification__menu,
+.message__menu{
+  .category__images{
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+  }
+  .circle__info{
+  line-height: 18px;
+}
+}
+.icons-color::before{
+  color: $tomato;
+}
+
 
 // end header
 // start searth
@@ -252,7 +267,15 @@ background-color: $green;
     margin-bottom: 15px;
   }
 }
-.user__box{
+.circle__menu{
+  position: absolute;
+  top: 69px;
+}
+.user__box,
+.basket__box,
+.message__box,
+.notification__box{
+
   position: relative;
   height: 90px;
   margin-top: 40px;
@@ -266,7 +289,113 @@ background-color: $green;
   }
 }
 
+.circle__menu{
+top: 62px;
+right: 0;
+border-top: 1px solid #e0e0e0;
+height: 0;
+overflow: hidden;
+transition: all .3s;
+}
 
+.basket__box,
+.message__box,
+.notification__box{
+  margin-top: 54px;
+  margin-left: 15px;
+  
+  &:hover{
+    .header__circle::before{
+      color: $bg;
+    }
+    .circle__menu{
+      overflow: auto;
+      height: auto;
+      transition: all .3s;
+    }
+    .circle__item{
+      padding: 23px 23px;
+      border-width: 1px;
+    }
+  }
+  
+}
+.circle__item{
+  background-color: #fff;
+  border: 0px solid #e0e0e0;
+  border-top: none;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  padding:  0 23px;
+  transition: all .3s;
+  display: flex;
+  align-items: center;
+  color: #b0bec5;
+  font-size: 16px;
+  
+  width: 269px;
+  position: relative;
+  &::before{
+    position: absolute;
+    top: 27px;
+    right: 28px;
+  }
+}
+.circle__images{
+  margin-right: 25px;
+}
+.circle__info-mame{
+@include f500;
+color: $bg;
+}
+.circle__info-theme{
+  font-size: 12px;
+  color:$green;
+
+}
+.circle__info-price{
+@include f500;
+color: #000;
+font-size: 16px;
+}
+.circle__info-date{
+  columns: #707070;
+  font-size: 10px;
+}
+.basket__summ{
+  padding: 16px 17 px 12px;
+   border: 1px solid #e0e0e0;
+  border-top: none;
+  background-color: #fff;
+
+}
+.basket__title{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 33px;
+  padding-right: 22px;
+  margin-bottom: 15px;
+  @include f700;
+  font-size: 16px;
+  color: $bg;
+
+}
+.basket__btn{
+  @include f700;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 5px;
+  margin-left: 24px;
+  margin-bottom: 14px;
+  text-align: center;
+  background-color: $green;
+  width: 100px;
+}
+ .basket__btn-checkout{
+   width: 123px;
+   margin-left: 6px;
+   background-color: $red;
+ }
 
 // end searth
 
