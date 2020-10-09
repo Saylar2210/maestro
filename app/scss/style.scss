@@ -3,6 +3,9 @@
 @import 'fonts';
 
 // start header
+.header{
+  background-color: #fff;
+}
 .header__top-inner{
     display: flex;
     justify-content: space-between;
@@ -270,6 +273,7 @@ background-color: $green;
 .circle__menu{
   position: absolute;
   top: 69px;
+  z-index: 1;
 }
 .user__box,
 .basket__box,
@@ -396,7 +400,10 @@ font-size: 16px;
    margin-left: 6px;
    background-color: $red;
  }
-
+.header__btn-menu,
+.menu__btn{
+display: none;
+}
 // end searth
 
 
@@ -1242,3 +1249,17 @@ span{
 }
 // product page end
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import 'media';
