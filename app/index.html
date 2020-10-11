@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300,400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/libs.min.css">
   <link rel="stylesheet" href="css/style.min.css">
@@ -199,7 +199,7 @@
     
     
     
-                <a class="header__btn header__btn-login" href="#"> Login</a>
+                <a class="header__btn header__btn-login " data-fancybox data-src="#modal" href="javascript:;" >Login</a>
                 <a class="header__btn  header__btn-logout header__btn-login--off" href="#">Logout</a>
                 <a class="header__btn header__register " href="#">Register</a>
     
@@ -1121,6 +1121,7 @@
             <path
               d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z">
             </path>
+            
         </div>
         <div class="advantages__item-title">
         Quality Products
@@ -1288,6 +1289,25 @@ Join Our Community
 </footer>
 </div>
 
+  <div id="modal">
+    <div class="login__wrapper">
+    <div class="login__title">login</div>    
+
+  .
+    <form action="">
+      <label class=" login__label-name" for="">
+        <input type="text" placeholder="Name" required>
+      </label>
+
+      <label class=" login__label-pass" for="">
+        <input type="password"  placeholder="password" required>
+      </label>
+      <button type="submit">submit</button>
+      <a class="creat-acc" href="#">Creat An Account?</a>
+      <a class="lost-pass" href="#">Lost Password?</a>
+    </form>
+  </div>
+  </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="js/libs.min.js"></script>

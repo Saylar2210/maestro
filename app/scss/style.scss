@@ -28,7 +28,7 @@ text-align: center;
 color: #fff;
 font-size: 12px;
 }
-.header__login{
+.header__btn-login{
   background-color: $green;
 
 }
@@ -116,7 +116,7 @@ background-color: $green;
   display: none;
 }
 .header__btn-logout{
-  display: block;
+  display: none;
   &.header__btn-login--on{
     display: block;
   }
@@ -185,6 +185,102 @@ background-color: $green;
 
 
 // end header
+#modal{
+  background-color: $green;
+  max-width: 730px;
+  width: 100%;
+  padding-top: 90px;
+  padding-bottom: 100px;
+}
+.login__title{
+  text-align: center;
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  @include f700;
+ 
+}
+.login__wrapper{
+  form{
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  label{
+position: relative;
+display: block;
+width: 100%;
+&::before{
+  position: absolute;
+  font-family: 'icomoon';
+  font-size: 14px;
+  color: #fff;
+  left: 18px;
+  top: 9px;
+}
+  }
+  .login__label-name::before{
+    content: "\f007";
+  }
+  .login__label-pass::before{
+    content: "\f023";
+  }
+  input{
+    height: 43px;
+    margin-bottom: 8px;
+    border: none;
+    background-color: #76ae36;
+    color: #fff;
+    font-size: 14px;
+    padding-left: 40px;
+    display: block;
+    width: 100%;
+    &::placeholder{
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+
+  button{
+    margin-top: 19px;
+    padding: 18px 0 16px;
+    background-color: #fff;
+    width: 140px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0px 2px 2px 0px rgba(118, 174, 54, 0.75);
+    margin-right: 10px;
+    @include f700;
+    color: #000;
+    text-align: center;
+  }
+}
+.lost-pass{
+  display: block;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 18px;
+}
+.creat-acc{
+  margin-top: 19px;
+  padding: 15px 0  15px 28px;
+  text-align: center;
+  width: 245px;
+  background-color: #76ae36;
+  color: #fff;
+  font-size: 18px;
+  position: relative;
+  &::before{
+    content: "\f044";
+    position: absolute;
+    top: 15px;
+    left: 35px;
+    font-family: 'icomoon';
+  }
+}
+.fancybox-button svg path{
+  color: #fff;
+}
 // start searth
 .search{
   background-image: url(../images/searth-bg.jpg);
@@ -307,6 +403,7 @@ transition: all .3s;
 .notification__box{
   margin-top: 54px;
   margin-left: 15px;
+  right: 10px;
   
   &:hover{
     .header__circle::before{
@@ -1248,10 +1345,346 @@ span{
   }
 }
 // product page end
+// .product-one start
+.product-one{
+  padding-bottom: 100px;
+}
+.product-one__inner{
+  display: flex;
+}
+.product-one__content{
+margin-right: 31px;
+max-width: 870px;
+}
+.product-one__images-inner{
+  background-color: #fff;
+  border: 1px solid #dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 0;
+  
+ 
+}
+.product-one__images{
+
+max-width: 829px;
+width: 100%;
+height: 422px;
+background-image: url(../images/details.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+.product-one__title{
+font-size: 30px;
+color: $bg;
+line-height: 40px;
+@include f500;
+margin-top: 30px;
+margin-bottom: 20px;
+}
+.product-one__text{
+font-size: 16px;
+color: #787878;
+margin-bottom: 35px;
+margin-top: 20px;
+}
+
+.product-one__box{
+  margin-bottom: 55px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.product-one__link{
+  .link-live{
+    background-color: $red;
+  }
+.live-screenshot{
+background-color: #455a64;
+}
+.lide-docunintation{
+  background-color: $green;
+}
 
 
+  a{
+    padding: 16px 8px;
+    width: 150px;
+    color: $grey;
+    font-size: 14px;
+    & + a{
+      margin-left: 20px;
+    }
+  }
 
+  
+}
+.product-one__social{
+a{
+width: 54px;
+height: 50px;
+position: relative;
+& + a{
+  margin-top: 3px;
+}
+&::before{
+  font-size: 18px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+}
+}
+}
+.icon-facebook{
+background-color: #6370b6;
+}
+.icon-twitter{
+background-color: #64b5f6;
+}
+.icon-linkedin2{
+background-color: #4f71ce;
+}
+.icon-pinterest-p{
+background-color: #d32f2f;
+}
+.product-one__more-title{
+  font-size: 18px;
+  @include f500;
+  color: $bg;
+  padding: 18px 25px;
+  background-color: #fff;
+  border: 1px solid #dcdcdc;
+  margin-bottom: 28px;
+}
+.product-one__more-icons{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
+}
+.productmini{
+  max-width: 270px;
+  margin-bottom: 20px;
+  display: flex;
+  height: 90px;
+  width: 100%;
+  align-items: center;
+  box-shadow: 0px 1px 2px 0px rgba(205, 214, 222, 0.75);
+
+}
+.productmini__images{
+  width: 100px;
+  height: 90px;
+  margin-right: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+ 
+
+}
+.productmini__info{
+  .productmini__name{
+    @include f500;
+    font-size: 14px;
+    color: $bg;
+  }
+  .productmini__thema{
+    color: $green;
+    font-size: 12px;
+  }
+  .productmini__price{
+    @include f700;
+    font-size: 18px;
+    color: $bg;
+  }
+}
+.tabs{
+  display: flex;
+  text-align: center;
+  border:1px solid #d7d7d7 ;
+  .tab{
+    width: 100%;
+    background-color: #fff;
+    font-size: 16px;
+    color: #78838d;
+    padding: 20px 0;
+    cursor: pointer;
+    & + .tab{
+      border-left:1px solid #d7d7d7 ;
+    }
+  }
+}
+.product-one__tabs{
+  margin-bottom: 55px;
+}
+.tab_content{
+  background-color: #fff;
+  border:1px solid #d7d7d7 ;
+  border-top: none;
+  padding: 30px 50px;
+}
+.tab-item{
+  display: none;
+  &::first-child{
+    display: block;
+  }
+}
+.tab-items__list{
+  line-height: 36px;
+  font-style: 16px;
+  color: #707070;
+  column-count: 2;
+  column-gap: 25px;
+  li{
+    max-width: 270px;
+  }
+}
+.price__box{
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+.price__product{
+  font-size: 22px;
+  @include f500;
+  color: $red;
+ 
+}
+.product__price{
+  button{
+    margin-bottom: 7px;
+    box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+    border: none;
+    background-color: $green;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif !important;
+    text-align: center;
+    display: block;
+    padding: 17px 5px 15px;
+    color: #fff;
+    width: 100%;
+    cursor: pointer;
+    background-color: $text;
+    &::before{
+      font-weight: 400;
+      font-family: 'icomoon';
+      padding-right: 8px;
+
+    }
+  }
+  .icon-shopping-cart{
+background-color: $green;
+  }
+  .icon-heart-o{
+    background-color: #42a5f5;
+  }
+}
+.product-author__box{
+  padding: 25px 0;
+  display: flex;
+}
+.author__avatar{
+  margin-right: 14px;
+}
+.author__name{
+font-size: 18px;
+color: $bg;
+bottom: 2px;
+}
+.author__info-link{
+  color: #707070;
+  font-size: 13px;
+  padding: 6px 9px 5px;
+  border: 1px solid #d6d6d6;
+}
+.author__awards-list{
+  li{
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+  
+    &::before{
+      position: absolute;
+     top: 6px;
+     left: 0;
+     right: 0;
+    }
+    & + li{
+      margin-left: 8px;
+    }
+  }
+.icon-meh-o{
+background-image: url(../images/awars/awars-orang.png);
+width: 34px;
+height: 37px;
+
+}
+.icon-pagelines{
+background-image: url(../images/awars/awars-red.png);
+width: 34px;
+height: 37px;
+
+}
+.icon-flash{
+background-image: url(../images/awars/awars-blue.png);
+width: 34px;
+height: 37px;
+
+}
+.icon-foursquare{
+background-image: url(../images/awars/awars-green.png);
+width: 34px;
+height: 37px;
+
+}
+.icon-yen{
+  background-image: url(../images/awars/awars-grey.png);
+  width: 34px;
+  height: 37px;
+
+  }
+}
+.aside__item-sales{
+  padding-top: 23px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #707070;
+  
+  span{
+    font-size: 20px;
+      @include f700;
+      color: #263238;
+      padding-right: 13px;
+
+    &::before{
+      content: "\f07a";
+      color: #a6b5bb;
+      padding-right: 20px;
+      font-family: 'icomoon';
+    }
+  }
+}
+.aside__item.sales-number{
+  padding-bottom: 25px;
+}
+.information__line{
+  font-size: 14px;
+  color: #70838d;
+  
+    margin-top: 18px;
+  
+  span{
+color: $bg;
+@include f500;
+  }
+}
+// .product-one end
 
 
 
