@@ -26,6 +26,7 @@
     "slick-carousel": "^1.8.1"
   },
   "dependencies": {
-    "cssmin": "^0.4.3"
+    "cssmin": "^0.4.3",
+    "jquery-form-styler": "^2.0.2"
   }
 }
